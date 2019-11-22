@@ -12,8 +12,12 @@ import cucumber.api.junit.Cucumber;
 		features= {".//Features/"},
 		glue="stepDefinitions",
 		dryRun=false,
-		monochrome=true,
-		plugin= {"pretty","html:test-output"},
+		monochrome=true, // Console output in readable format
+		plugin= {"pretty",
+				"html:target/cucumber-report.html",
+				"json:target/cucumber.json",
+				//"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:test-output/report.html"
+				},
 		tags= {"@sanity, @regression"}
 		)
 
